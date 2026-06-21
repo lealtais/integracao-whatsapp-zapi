@@ -46,7 +46,7 @@ def send_message(phone, name):
         "message": message
     }
     try:
-        response = requests.post(url, json=payload, headers=headers)
+        response = requests.post(url, json=payload, headers=headers, timeout=10)
         response.raise_for_status()
         logger.info(f"Mensagem enviada com sucesso para {name} ({phone})")
         return True
@@ -78,7 +78,7 @@ def main():
             logger.warning(f"Contato com dados incompletos, ignorado: {contact}")
             continue
 
-        name = str(name).strip()
+        name = str(name).strip().title()
         phone = re.sub(r'\D', '', str(phone))
 
         if not phone:
