@@ -38,3 +38,11 @@ Crie um arquivo `.env` na raiz do projeto (com base no arquivo `.env.example`) e
    ```bash
    python main.py
    ```
+
+## Demonstração
+
+Logs de execução do script:
+![Log de Execução](assets/log-execucao.png)
+
+Mensagem recebida no WhatsApp via Z-API:
+![Mensagem WhatsApp](assets/msg-whatsapp.png)
